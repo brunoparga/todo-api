@@ -28,7 +28,7 @@ module TodoApi
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'localhost:3001'
-        resource '*', headers: :any, methods: %i[get post put options]
+        resource '*', headers: :any, methods: %i[get post put delete options]
       end
     end
 

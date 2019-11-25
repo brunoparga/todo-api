@@ -15,4 +15,9 @@ class TodosController < ApplicationController
     todo.toggle_done!
     render json: todo
   end
+
+  def destroy
+    todo = Todo.find(params[:id])
+    todo.destroy
+  end
 end
