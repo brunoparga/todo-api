@@ -6,6 +6,10 @@ class TodosController < ApplicationController
     render json: Todo.order(:created_at)
   end
 
+  def create
+    render json: Todo.create(params.permit(:task))
+  end
+
   def update
     todo = Todo.find(params[:id])
     todo.toggle_done!
