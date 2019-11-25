@@ -3,8 +3,8 @@
 class Todo < ApplicationRecord
   validates :task, presence: true, length: { minimum: 5 }
 
-  def mark_as_done!
-    self.done = true
+  def toggle_done!
+    self.done = !done
     save
   end
 end
